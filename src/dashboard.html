@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>VaultX - Dashboard</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        /* Add the blockchain styles from abc.html */
+        .blockchain-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+
+        
+        .balance {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #21333b;
+            border-radius: 4px;
+        }
+        .blockchain-buttons {
+            margin: 15px 0;
+            text-align: center;
+        }
+        .block {
+            border: 3px solid #000000;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            background-color: gray;
+        }
+        .block-header {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .block-data {
+            margin-left: 10px;
+            color: #fefbfb;
+        }
+        .status {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+        .valid {
+            background-color: #d4edda;
+            color: #155724;
+            border: 3px solid black;
+        }
+        .invalid {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 3px solid black;
+        }
+        .mining {
+            background-color: #fff3cd;
+            color: #856404;
+            border: 3px solid black;
+        }
+    </style>
+</head>
+
+
+<!-- Scroll Buttons -->
+<button id="scrollToTopBtn" style="
+    position: fixed;
+    bottom: 70px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #21333b;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    line-height: 40px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    display: none;
+">&uarr;</button>
+
+<button id="scrollToBottomBtn" style="
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #21333b;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    line-height: 40px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+">&darr;</button>
+
+<script>
+    // Scroll to Bottom
+    document.getElementById('scrollToBottomBtn').addEventListener('click', function() {
+        window.scrollTo({
+            top: document.body.scrollHeight,
+            behavior: 'smooth'
+        });
+    });
+
+    // Scroll to Top
+    document.getElementById('scrollToTopBtn').addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+    // Show/hide scroll-to-top button based on scroll position
+    window.addEventListener('scroll', function() {
+        var scrollTopBtn = document.getElementById('scrollToTopBtn');
+        if (window.pageYOffset > 300) {
+            scrollTopBtn.style.display = 'block';
+        } else {
+            scrollTopBtn.style.display = 'none';
+        }
+    });
+</script>
+
+<body style="background: url('bg.jpg') center center fixed no-repeat; background-size: cover;">    <header class="header">
+        <div class="logo-container">
+            <img src="vx_logo.jpg" alt="VaultX Logo" class="header-logo">
+        </div>
+    </header>
+
+    <div class="dashboard-container">
+        <h1>Welcome, <span id="username-display"></span>!</h1>
+        <div class="user-info" style="background-color: rgb(35, 46, 56);">
+            <h2>Your Account Information</h2>
+            <p>Email: <span id="email-display"></span></p>
+            <p >Balance: <span id="balance-display"></span> VX</p> <!-- alert-->
+        </div>
+        
+        <!-- Blockchain Section -->
+        <div class="blockchain-container">
+            <h2>VX Blockchain</h2>
+            
+           
+            
+            <div class="blockchain-buttons">
+                <button id="mineBlock" class="btn">Mine New Block</button>
+                <button id="checkValidity" class="btn" style="margin-top: 10px;">Check Chain Validity</button>
+            </div>
+
+            <!-- Add this inside the blockchain-container div, after the buttons -->
+<div id="miningProcess" style="display: none; margin: 15px 0; padding: 10px; background-color: #f0f0f0; border-radius: 4px;">
+    <h4 style="color: #333;">Mining Process:</h4>
+    <div id="hashAttempts" style="max-height: 200px; overflow-y: auto; font-family: monospace;"></div>
+    <div id="miningStats" style="margin-top: 10px;"></div>
+</div>
+            
+            <div id="statusMessage" class="status" style="display: none;"></div>
+            
+            <h3>Blockchain</h3>
+            <div id="blockchainView"></div>
+        </div>
+        
+        <button id="logout-btn" class="btn">Logout</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>VaultX</title>
+    <link rel="stylesheet" href="index.css">
+    
+</head>
+<body>
+    <!-- Navbar start-->
+   <header class="header">
+    <nav class="navbar">
+        <a href="index.html">Home</a> <!--Links-->
+        <a href="Services.html">Services</a>  <!--Links-->
+          <a href="About.html">About</a>  <!--Links-->
+          <a href="contact.html">Contact</a> <!--Links-->
+          <a href="help.html">Help</a> <!--Links-->
+    </nav>
+    <!--Logo start-->
+    <div class="logo-container">
+        <img src="vx_logo.jpg" alt="VaultX Logo" class="header-logo">
+     </div>
+      <!--Logo end-->
+   </header>
+    <!-- Navbar end-->
+
+
+    <!-- LOGIN FORM -->
+    <div class="background"></div>
+    <div class="container">
+        <div class="item">
+            <h2 class="logo"><i class='bx bxl-xing'></i>VaultX</h2>
+            <div class="text-item">
+                <h2>Welcome! <br><span>
+                    
+                </span></h2>
+                <p>Symbolizing security and digital wealth.</p>
+                <div class="social-icon">
+                    <a href="#"><i class='bx bxl-facebook'></i></a>
+                    <a href="#"><i class='bx bxl-twitter'></i></a>
+                    <a href="#"><i class='bx bxl-youtube'></i></a>
+                    <a href="#"><i class='bx bxl-instagram'></i></a>
+                    <a href="#"><i class='bx bxl-linkedin'></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="login-section">
+            <div class="form-box login">
+                <form action="">
+                    <h2>Sign In</h2>
+                    <div class="input-box">
+                        <span class="icon"><i class='bx bxs-envelope'></i></span>
+                        <input id="login-email" type="email" required> <!--input-->
+                        <label>Email</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><i class='bx bxs-lock-alt' ></i></span>
+                        <input id="login-password" type="password" required><!--input-->
+                        <label>Password</label>
+                    </div>
+                    <div class="remember-password">
+                        <label for=""><input type="checkbox">Remember Me</label>
+                        <a href="#">Forget Password</a>
+                    </div>
+                    <button class="btn" onclick="login()">Sign In</button>
+                    <div class="create-account">
+                        <p>Create A New Account? <a href="#" class="register-link">Sign Up</a></p>
+                    </div>
+                </form>
+            </div>
+            <div class="form-box register">
+                <form action="">
+
+                    <h2>Sign Up</h2>
+
+                    <div class="input-box">
+                        <span class="icon"><i class='bx bxs-user'></i></span>
+                        <input id="register-username" type="text" required ><!--input-->
+                        <label >Username</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><i class='bx bxs-envelope'></i></span>
+                        <input id="register-email" type="email" required ><!--input-->
+                        <label >Email</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><i class='bx bxs-lock-alt' ></i></span>
+                        <input id="register-password" type="password" required><!--input-->
+                        <label>Password</label>
+                    </div>
+                    <div class="remember-password">
+                        <label for=""><input type="checkbox">I agree with this statment</label>
+                    </div>
+                    <button class="btn"  onclick="register()">Sign Up</button>
+                    <div class="create-account">
+                        <p>Already Have An Account? <a href="#" class="login-link">Sign In</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
