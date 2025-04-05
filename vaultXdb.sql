@@ -45,7 +45,9 @@ DELETE FROM userinfo;
 DELETE FROM user_balances;
 DELETE FROM blocks;
 
-ALTER TABLE userinfo DROP COLUMN balance;
+update  blocks -- demo to change the data note it will make the blockchain invalid!!
+set data = "{Changed data : 100000}"
+where block_index = 1;
 
 
 
