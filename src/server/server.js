@@ -44,7 +44,7 @@ wss.on('connection', function connection(ws) {
             const newBlock = {
                 index: newIndex,
                 timestamp: new Date().toISOString(),
-                data: { amount: Math.random() * 100 },
+                data: { amount: Math.random() * 100000 },
                 previousHash: previousHash,
                 nonce: 0
             };
