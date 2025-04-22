@@ -41,7 +41,7 @@ WebSocket: Real-time mining progress updates
 Demonstrated end-to-end blockchain implementation, combining financial tracking with decentralized ledger technology in a user-friendly interface.
 
 **Code & Deployment:**
-GitHub: 
+GitHub: https://github.com/kartikeya-kash/vaultX/tree/master
 Deployed: Localhost (Node.js server) with MySQL backend.
 
 **Skills Demonstrated:**
