@@ -42,7 +42,8 @@ Demonstrated end-to-end blockchain implementation, combining financial tracking 
 
 **Code & Deployment:**
 GitHub: https://github.com/kartikeya-kash/vaultX/tree/master
-Deployed: Localhost (Node.js server) with MySQL backend.
+Deployed: https://vaultxdeploy.vercel.app
+Backend: Localhost (Node.js server) with MySQL backend. (not deployed)
 
 **Skills Demonstrated:**
 Full-stack development, blockchain fundamentals, database management, and real-time system design.
